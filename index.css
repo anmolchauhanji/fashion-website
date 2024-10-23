@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+#main {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 25% 25% 50%;
+    grid-template-rows: 26% 56% 18%;
+}
+
+#left-top-left, #left-top-right, #left-top-center, #left-top-bottom {
+    background: #ffffff;
+    padding: 10%;
+}
+
+#square {
+    height: 20px;
+    width: 20px;
+    background-color: black;
+    transform: rotate(45deg);
+}
+
+#left-top-right {
+    color: rgb(69, 49, 49);
+    text-align: right;
+    font-size: 1rem; /* Use rem for scalability */
+}
+
+#left-top-right h4 {
+    color: black;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+#left-top-center {
+    padding: 15px;
+    font-weight: 100;
+    font-size: 3vw; /* Responsive font size */
+    line-height: 1;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    grid-row: 2;
+    grid-column: 1 / 3;
+}
+
+#left-top-bottom {
+    grid-column: 1 / 3;
+}
+
+#right {
+    padding-right: 50px;
+    grid-row: 1 / 4;
+    grid-column: 3;
+}
+
+#right video {
+    object-fit: cover;
+    border-radius: 20px;
+    height: 100%;
+    width: 100%;
+}
+
+#button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ff0000;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: 47%;
+    height: 100px;
+    width: 100px;
+}
+
+.ri-arrow-right-line {
+    color: rgb(253, 253, 253);
+    font-size: 30px;
+}
+
+@media (max-width: 800px) {
+    #main {
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto auto;
+    }
+    #right {
+        padding-right: 0;
+        grid-row: 3;
+        grid-column: 1 / 3;
+    }
+}
+
+@media (max-width: 500px) {
+    #main {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+    }
+    #left-top-left,
+    #left-top-right,
+    #left-top-center,
+    #left-top-bottom {
+        padding: 5%;
+    }
+    #left-top-center {
+        font-size: 4vw;
+        text-align: center;
+    }
+    #left-top-bottom p {
+        font-size: 1rem;
+        text-align: center;
+    }
+    #button {
+        top: 35%;
+        right: 39%;
+    }
+}
